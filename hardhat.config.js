@@ -8,7 +8,6 @@ const INFURA_API_KEY = vars.get("INFURA_API_KEY");
 const SEPOLIA_TEST_ACCOUNT_1_PRIVATE_KEY = vars.get("SEPOLIA_TEST_ACCOUNT_1_PRIVATE_KEY");
 
 
-
 module.exports = {
   solidity: "0.8.30", // Updated Solidity version as you mentioned
   networks: {
