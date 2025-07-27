@@ -18,7 +18,7 @@ ENV=${1:-dev}
 
 printf "\nDeployment environment: $ENV\n"
 
-if [ "$ENV" = "dev" ]; then
+if [ "$ENV" = "hardhat" ]; then
   # Start Hardhat node for dev environment
 
   printf "\nStarting Hardhat node..."
@@ -46,13 +46,13 @@ if [ "$ENV" = "dev" ]; then
   # Deploy to localhost in dev mode
   npx hardhat ignition deploy ./ignition/modules/MyToken.js --network localhost
 
-elif [ "$ENV" = "prod" ]; then
+elif [ "$ENV" = "sepolia" ]; then
 
   # Deploy to Sepolia
   npx hardhat ignition deploy ./ignition/modules/MyToken.js --network sepolia
 
 else
-  printf "\n⚠️  Invalid environment: $ENV. Use 'dev' or 'prod'.\n"
+  printf "\n⚠️  Invalid environment: $ENV. Use 'hardhat' or 'sepolia'.\n"
   exit 1
 fi
 
